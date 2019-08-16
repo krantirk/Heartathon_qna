@@ -1,0 +1,8 @@
+PERSON_001,Lalaji|Lalaji Maharaj|Shri Ram Chandra|Shri Ram Chandra of Fatehgargh|Puttu
+PERSON_002,Babuji|Babuji Maharaj|Shri Ram Chandra|Shri Ram Chandra of Shahjahanpur
+PERSON_003,Chariji|Chariji Maharaj|Parthasarathy|Parthasarathy Rajagopalachari|P. Rajagopalachari
+PERSON_004,Daaji|Kamlesh|Kamlesh Patel|Kamlesh D. Patel
+PERSON_005,Joshua Pollack
+PERSON_006,Dr. K. C. Vardhacharia
+PERSON_007,Swami Vivekananda
+PERSON_008,Vinobha Bhave
