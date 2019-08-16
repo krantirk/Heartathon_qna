@@ -72,12 +72,11 @@ class Analysis(KG):
         # assuming we have one annotation to subsitute
         # return Answer
         parse = parse.split('|')
-        # print(self.id_to_predicate)
+
         if parse[0].startswith('predicate'):
-            # print(annotation[2], parse[2])
+
             predicate = parse[2]
-            # print(predicate)
-            # print(annotation[2])
+
             output = self.get_id_to_predicate(annotation[2], predicate)
             if not output:
                 print("parse not defined properly in data")
@@ -109,11 +108,7 @@ class Analysis(KG):
         parsed_question, entity_types = self._substitute_entities(preprocessed_question, annotations, with_type=True)
         if not parsed_question:
             return ""
-        # print("parsed question -> ", parsed_question)
-        # print("question templates -> \n\n\n")
-        # print(self.question_templates)
-        # print(parsed_question.lower())
-        # print(self.question_templates.get(parsed_question.lower()))
+
         question_template, parse, answer_template = self._match_template_question(parsed_question.lower())
         if not question_template:
             print("No matching question template found for this question")
@@ -122,19 +117,11 @@ class Analysis(KG):
         if not outputs[0]:
             return ""
         inputs = [(entity_type, ''.join(self.get_id_to_name(annotation[2]))) for annotation, entity_type in zip(annotations, entity_types)]
-        # print("inputs")
-        # print(inputs)
-        # print("outputs")
-        # print(outputs)
 
-        # io = inputs.extend(outputs)
         inputs.append(outputs)
-        # print(inputs)
         answer = self._fill_answer_template(inputs, answer_template)
-        # print(answer)
         return answer
-        # print(parsed_question)
-        # print(question_template, parse, answer_template)
+
 
 
         
