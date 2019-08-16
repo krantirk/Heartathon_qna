@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Aug 15 17:23:29 2019
-
-@author: Kranti Kumar
-"""
 from qna.src.knowledge import KG
 
 import pandas as pd
@@ -53,6 +47,7 @@ class Analysis(KG):
     
     def _substitute_entities(self, question, annotations, with_type=False):
         question = question.split(' ')
+
         annotated_question = []
         entity_types = []
         for annotation in annotations:
@@ -71,19 +66,22 @@ class Analysis(KG):
         return ' '.join(annotated_question), entity_types
 
     def _match_template_question(self, question):
-        return self.question_templates.get(question)
+        return self.question_templates.get(question, (None, None, None))
 
     def _parse_question(self, annotation, parse):
         # assuming we have one annotation to subsitute
         # return Answer
         parse = parse.split('|')
-        print(self.id_to_predicate)
+        # print(self.id_to_predicate)
         if parse[0].startswith('predicate'):
-            print(annotation[2], parse[2])
+            # print(annotation[2], parse[2])
             predicate = parse[2]
-            print(predicate)
-            print(annotation[2])
+            # print(predicate)
+            # print(annotation[2])
             output = self.get_id_to_predicate(annotation[2], predicate)
+            if not output:
+                print("parse not defined properly in data")
+                return None, None
 
             # so output should be a list of attributes of typoe parse[3]
             # lets perform type checking
@@ -101,29 +99,40 @@ class Analysis(KG):
 
     def _execute(self, question):
         preprocessed_question = self._preprocess_question(question) # question mark removal can make problem in future
+        if len(question) < 2:
+            print("question is too small")
+            return ""
         annotations = self._annotate_entities(question)
+        if annotations == []:
+            print("no entities detected")
+            return ""
         parsed_question, entity_types = self._substitute_entities(preprocessed_question, annotations, with_type=True)
-        print("parsed question -> ", parsed_question)
-
-        print("question templates -> \n\n\n")
-        print(self.question_templates)
-        print(parsed_question.lower())
-        print(self.question_templates.get(parsed_question.lower()))
+        if not parsed_question:
+            return ""
+        # print("parsed question -> ", parsed_question)
+        # print("question templates -> \n\n\n")
+        # print(self.question_templates)
+        # print(parsed_question.lower())
+        # print(self.question_templates.get(parsed_question.lower()))
         question_template, parse, answer_template = self._match_template_question(parsed_question.lower())
-
+        if not question_template:
+            print("No matching question template found for this question")
+            return ""
         outputs = self._parse_question(annotations[0], parse) # output -> tuple
-
+        if not outputs[0]:
+            return ""
         inputs = [(entity_type, ''.join(self.get_id_to_name(annotation[2]))) for annotation, entity_type in zip(annotations, entity_types)]
-        print("inputs")
-        print(inputs)
-        print("outputs")
-        print(outputs)
+        # print("inputs")
+        # print(inputs)
+        # print("outputs")
+        # print(outputs)
 
         # io = inputs.extend(outputs)
         inputs.append(outputs)
-        print(inputs)
+        # print(inputs)
         answer = self._fill_answer_template(inputs, answer_template)
-        print(answer)
+        # print(answer)
+        return answer
         # print(parsed_question)
         # print(question_template, parse, answer_template)
 

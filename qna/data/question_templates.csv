@@ -3,7 +3,7 @@ Where was _PERSON born?,predicate|PERSON|place_of_CITY|CITY,_PERSON was born in 
 Birth place of _PERSON?,predicate|PERSON|place_of_CITY|CITY,Birth place of _PERSON is _CITY
 _PERSON was born in?,predicate|PERSON|place_of_CITY|CITY,_PERSON was born in _CITY
 What is the birth place of _PERSON?,predicate|PERSON|place_of_CITY|CITY,The birth place of _PERSON is _CITY
-_BOOK was writen by?,predicate|BOOK|authored_by_PERSON|PERSON,_BOOK was written by _PERSON
+_BOOK was written by?,predicate|BOOK|authored_by_PERSON|PERSON,_BOOK was written by _PERSON
 Who wrote the book _BOOK?,predicate|BOOK|authored_by_PERSON|PERSON,_BOOK was written by _PERSON
 Who wrote _BOOK?,predicate|BOOK|authored_by_PERSON|PERSON,_PERSON wrote _BOOK
 What are the books written by _PERSON,predicate|PERSON|author_of_BOOK|BOOK,Books written by _PERSON are _BOOK

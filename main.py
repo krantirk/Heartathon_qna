@@ -1,16 +1,12 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Aug 15 21:56:04 2019
-
-@author: Kranti Kumar
-"""
 from qna.src.analysis import Analysis
 
 qna_data_path = "./qna/data/kg"
 question_template_path = "./qna/data/question_templates.csv"
-question = "Designing Destiny was written by ?"
+# question = "Designing Destiny was written by?"
+question = "Babuji Lalaji books"
 analysis = Analysis(qna_data_path, question_template_path)
 #annotations = analysis._annotate_entities(question)
 #annotated_question = analysis._substitute_entities(question, annotations)
 #print(annotated_question)
-analysis._execute(question)
+ret_str = analysis._execute(question)
+print('returned string ->', ret_str)
