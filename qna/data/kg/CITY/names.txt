@@ -1,7 +1,7 @@
 CITY_001,Fathehgarh
 CITY_002,Shahjahanpur
 CITY_003,Vayalur
-CITY_004,Hyderabad
+CITY_004,Gujarat
 CITY_005,Bangalor
 CITY_006,Satkhol
 CITY_007,Kanha

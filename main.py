@@ -8,7 +8,7 @@ from qna.src.analysis import Analysis
 
 qna_data_path = "./qna/data/kg"
 question_template_path = "./qna/data/question_templates.csv"
-question = "Who is the author of Reality at Dawn"
+question = "Designing Destiny was written by ?"
 analysis = Analysis(qna_data_path, question_template_path)
 #annotations = analysis._annotate_entities(question)
 #annotated_question = analysis._substitute_entities(question, annotations)

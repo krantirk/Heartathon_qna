@@ -1,0 +1,11 @@
+QUOTATION_001,"What is meant by acceptance is that, whatever the time, we should pass it silently. Let us see what Nature does and what happens."
+QUOTATION_002,"If you are virtuous, persons around you are bound to be benefited by happiness."
+QUOTATION_003,"The mystery of all happiness lies in the steadying and settling down of the activity of the mind."
+QUOTATION_004,"Inner peace is more important than all the riches of the world."
+QUOTATION_005,"The happiest man is he who is happy under all circumstances."
+QUOTATION_006,"Mere reading of books without a close study of the heart's book is of no avail."
+QUOTATION_007,"Clean your inner self and you'll find that everything outside appears clean. Beautify the interior, and everything outside will be beautiful." 
+QUOTATION_008,"However beautiful a full moon may be, it cannot exist without the sun."
+QUOTATION_009,"The ready heart, the well-prepared heart, the deserving heart, will attract grace, love and blessings without even asking for it."
+QUOTATION_010,"Discipline is something which has to come from inside, and not be imposed from outside."
+

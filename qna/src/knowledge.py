@@ -4,11 +4,10 @@ Created on Thu Aug 15 11:39:51 2019
 
 @author: Kranti Kumar
 """
-
+#Knowledge graph with Q&A
 import pandas as pd
 import os
 import logging
-
    
 class KG:
     def __init__(self, qna_data_path):
