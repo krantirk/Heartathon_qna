@@ -1,0 +1,19 @@
+Question,Parse,Answer
+Where was _PERSON born?,predicate|PERSON|place_of_birth|CITY,_PERSON was born in _CITY
+Birth place of _PERSON?,predicate|PERSON|place_of_birth|CITY,Birth place of _PERSON is _CITY
+_PERSON was born in?,predicate|PERSON|place_of_birth|CITY,_PERSON was born in _CITY
+What is the birth place of _PERSON?,predicate|PERSON|place_of_birth|CITY,The birth place of _PERSON is _CITY
+_BOOK was writen by?,predicate|BOOK|written_by|PERSON,_BOOK was written by _PERSON
+Who wrote the book _BOOK?,predicate|BOOK|written_by|PERSON,_BOOK was written by _PERSON
+Who wrote _BOOK?,predicate|BOOK|written_by|PERSON,_PERSON wrote _BOOK
+What are the books written by _PERSON,predicate|PERSON|written_by|BOOK,Books written by _PERSON are _BOOK
+_PERSON books ?,predicate|PERSON|written_by|BOOK,Books written by _PERSON are _BOOK
+List of _PERSON books,predicate|PERSON|written_by|BOOK,List of Books written by the _PERSON are _BOOK
+Name the books written by _PERSON,predicate|PERSON|written_by|BOOK,Books written by _PERSON are _BOOK
+Who is the author of _BOOK?,predicate|BOOK|written_by|PERSON,Books written by  _PERSON are _BOOK
+Author of _BOOK?,predicate|BOOK|written_by|PERSON,Author of _BOOK is _PERSON
+_BOOK author?,predicate|BOOK|written_by|PERSON,Author of _BOOK is _PERSON
+Quotes by _PERSON,predicate|PERSON|quoted|QUOTATION,_QUOTATION
+Quotations by _PERSON,predicate|PERSON|quoted|QUOTATION,_QUOTATION
+_PERSON Quotes ?,predicate|PERSON|quoted|QUOTATION,_QUOTATION
+What are the quotes written by _PERSON?,predicate|PERSON|quoted|QUOTATION,_QUOTATION
