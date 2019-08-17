@@ -15,15 +15,12 @@ class Analysis(KG):
     def post_init(self):
         qdf = pd.read_csv(self.question_templates_path)
         qdf = qdf.set_index('Question')
-
-        # replace ? -> lower question -> replace
         for idx, row in qdf.iterrows():
             idx = idx.replace('?', '')
             self.question_templates[idx.lower().strip()] = [idx, row['Parse'], row['Answer']]
 
     def _preprocess_question(self, question):
         return question.lower().replace('?', '').strip()
-
 
     def _annotate_entities(self, question):
         # lower and load all entities
@@ -82,7 +79,7 @@ class Analysis(KG):
                 print("parse not defined properly in data")
                 return None, None
 
-            # so output should be a list of attributes of typoe parse[3]
+            # so output should be a list of attributes of type parse[3]
             # lets perform type checking
             for item in output:
                 assert self.get_id_to_type(item) == parse[3]
@@ -94,7 +91,6 @@ class Analysis(KG):
         for item in io:
             answer_template = answer_template.replace(item[0], item[1])
         return answer_template
-
 
     def _execute(self, question):
         preprocessed_question = self._preprocess_question(question) # question mark removal can make problem in future
@@ -122,7 +118,11 @@ class Analysis(KG):
         answer = self._fill_answer_template(inputs, answer_template)
         return answer
 
-
+    def grpc_request(self, question):
+        response = self._execute(question)
+        if response == "":
+            return [(question, response, 0.0)]
+        return [(question, response, 1.0)]
 
         
         

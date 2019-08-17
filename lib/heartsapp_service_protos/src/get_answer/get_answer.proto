@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+service GetAnswer {
+	// Searches for best matching qa pairs for a given query
+	rpc Search(SearchRequest) returns (SearchResponse);
+}
+
+// Request when searching for qa pairs by a query term
+message SearchRequest {
+	string query = 1;
+}
+
+// Response when searching for qa pairs
+message SearchResponse {	
+	message Result {
+		string question = 1;
+		string answer = 2;
+		float similarity = 3;
+	}
+	repeated Result result = 1;
+}
